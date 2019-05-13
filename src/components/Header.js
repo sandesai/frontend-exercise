@@ -19,8 +19,11 @@ export default class Header {
   getElement() {
     this._container.className = "header";
 
-    const logoContainer = document.createElement("div");
+   // const logoContainer = document.createElement("div");
+   const logoContainer = document.createElement("h1");
     logoContainer.className = "logo-container";
+
+    // logoContainer.className = "small";
 
     const title = document.createElement("h1");
     title.innerText = "Chuck's Ducks";

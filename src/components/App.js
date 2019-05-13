@@ -2,6 +2,8 @@ import "styles/App.css";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Content from "./Content";
+//import {Router} from 'vanilla-router';
+//import {Router} from './router.js';
 
 /**
  * Container for the application
@@ -35,5 +37,31 @@ export default class App {
 
     this._root.appendChild(sidebar.getElement());
     this._root.appendChild(pageContainer);
+
+
+
+    //shrink header while scrolling
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          document.getElementsByClassName('header')[0]['className']='header headerShrink';
+      } else {
+        document.getElementsByClassName('header')[0]['className']='header headerBig';
+      }
+    }
+
+    // const router= new Router();
+    // router.root='http://localhost:9000/';
+    // router.add({name:'home', path:'/home', handler:()=>console.log('handler to home')});
+
+  //   var router = new Router({
+  //     mode: 'history',
+  //     page404: function (path) {
+  //         console.log('"/' + path + '" Page not found');
+  //     }
+  // });
+
+
   }
 }

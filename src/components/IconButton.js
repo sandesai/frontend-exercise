@@ -11,6 +11,7 @@ export default class IconButton {
   constructor(iconName) {
     this._iconName = iconName;
     this._button = document.createElement("button");
+  
   }
 
   /**
@@ -19,9 +20,15 @@ export default class IconButton {
    */
   getElement() {
     this._button.className = "icon-button";
+    
 
     const icon = document.createElement("i");
     icon.className = `fas fa-${this._iconName} fa-3x`;
+    //adding tooltips
+    this._button.title= `Click to go to ${this._iconName} `; 
+    //this._button.setAttribute('route','#-${this._iconName} ');
+       
+
     this._button.appendChild(icon);
 
     return this._button;

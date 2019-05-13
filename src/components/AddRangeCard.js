@@ -14,7 +14,7 @@ export default class AddRangeCard {
     container.className = "add-range";
 
     const addButton = new IconButton("plus-circle");
-
+    
     container.appendChild(addButton.getElement());
 
     return container;
